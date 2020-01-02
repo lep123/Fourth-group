@@ -58,7 +58,6 @@ export function requestPost(url, action = {}) {
         // store.js --- window.store = store
         axios({
             method: 'POST',
-            baseURL: '/api',
             url,
             data: action,
             //headers: {
