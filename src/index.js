@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import 'antd/dist/antd.less';
-import '@/styles/rem.js';
 import '@/styles/iconfont.css'
-import '@/styles/reset.css';
 import './index.less';
 
 
