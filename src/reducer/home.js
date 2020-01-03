@@ -1,0 +1,14 @@
+const initState = {
+  cardData: [],
+}
+
+export default function login(state = initState, action) {
+  switch (action.type) {
+      case 'SET_CARDDATA':
+         
+          return { ...state, cardData:action.payload.users }
+  
+      default:
+          return state
+  }
+}
