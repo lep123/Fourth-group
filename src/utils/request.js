@@ -51,6 +51,7 @@ axios.interceptors.response.use(response => {
 
 export function requestPost(url, action = {}) {
     
+<<<<<<< HEAD
 	return new Promise((resolve, reject) => {
 		// const { token } = JSON.parse( localStorage.getItem('persist:root') )
 		// store.getState() 拿到所有的state
@@ -90,4 +91,34 @@ export function requestGet(url) {
 			})
 			.catch(err => reject(err))
 	})
+=======
+    return new Promise((resolve, reject) => {
+        // const { token } = JSON.parse( localStorage.getItem('persist:root') )
+        // store.getState() 拿到所有的state
+        // console.log(window.store.getState().login.token, )
+        // store.js --- window.store = store
+        axios({
+            method: 'POST',
+            url,
+            data: action,
+            //headers: {
+            //  key: '5d2878270550ac239657ffa54edd96ff',
+            //},
+        })
+            .then(res => resolve(res))
+            .catch(err => reject(err))
+    })
+}
+
+export function requestGet(url,params) {
+    return new Promise((resolve, reject) => {
+        axios({
+            method:'get',
+            url,
+            params,
+        })
+            .then(res => resolve(res))
+            .catch(err => reject(err))
+    })
+>>>>>>> 1034720a930a84ac5121d7a1e9c0fadac62398b1
 }

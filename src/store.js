@@ -15,11 +15,19 @@ const rootPersistConfig = {
 
 //单独为 某个 reduce 做数据持久化
 const myPersistReducer = combineReducers({
+<<<<<<< HEAD
 	index: rdc.home,
 	login: persistReducer(
 		rootPersistConfig,
 		rdc.login
 	)
+=======
+    // homeIndex: rdc.homeIndex,
+    login: persistReducer(
+        rootPersistConfig,
+        rdc.card
+    )
+>>>>>>> 1034720a930a84ac5121d7a1e9c0fadac62398b1
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
