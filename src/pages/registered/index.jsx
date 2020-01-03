@@ -12,17 +12,17 @@ import { Form, Icon, Input, Button, message } from 'antd';
 })class NormalLoginForm extends React.Component {
 
   handleSubmit = e => {
-      console.log(111)
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
             this.props.resd(values).then( res => {
                 if(res.payload.data.status == 200){
                     message.success('注册成功')
-                    this.props.push('/login')
+                    setTimeout(() => {  //延时器1秒后跳转
+                        this.props.history.push('/login')
+                    }, 1000);
                 }else {
-                    message.error('注册失败,整户已经存在')
+                    message.error('注册失败,账户已经存在')
                 }
             })
       }
