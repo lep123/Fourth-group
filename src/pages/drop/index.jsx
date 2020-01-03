@@ -15,7 +15,7 @@ import './styles.less'
 
 export default
 @connect(state => {
-  const { card } = state.login
+  const { card } = state.card
   return {
     card
   }
