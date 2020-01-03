@@ -31,7 +31,7 @@ class extends React.PureComponent {
               <div className="pages_card_btm">
                 <img src={userImgs} alt="" className="pages_card_userImgs"/>
                  <h3>{v.gender}</h3>
-                 <p>
+                 <p> 
                    {v.hospital}
                  </p>
               </div>
