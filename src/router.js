@@ -9,6 +9,10 @@ import loader from '@/utils/loader' // 路由懒加载
 
 const Basic = loader(() => import('@/layouts/Basic'))
 const Users = loader(() => import('@/layouts/Users'))
+
+const Registered = loader(() => import('@/pages/registered'))
+const Login = loader(() => import('@/pages/login'))
+
 // const Login = loader(() => import('@/pages/login'))
 // const Reg = loader(() => import('@/layouts/reg'))
 const Home = loader(() => import('@/pages/home'))
@@ -18,19 +22,18 @@ const Drop = loader(() => import('@/pages/drop'))
 // const Card = loader(() => import('@/layouts/card'))
 // const Operational = loader(() => import('@/layouts/operational'))
 
-const routes = [{
+const routes = [
+	{
 		component: Users,
 		path: '/users',
-		// routes: [
-		// 	{
-		// 		component: Login,
-		// 		path: '/users/login', 
-		// 	},
-		// 	{
-		// 		component: Reg,
-		// 		path: '/users/reg', 
-		// 	}
-		// ]
+	},
+	{
+		component: Login,
+		path: '/login',
+	},
+	{
+		component: Registered,
+		path: '/registered',
 	},
 	{
 		component: Basic,
