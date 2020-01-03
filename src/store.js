@@ -19,7 +19,12 @@ const myPersistReducer = combineReducers({
 	login: persistReducer(
 		rootPersistConfig,
 		rdc.login
-	)
+	),
+    // homeIndex: rdc.homeIndex,
+    card: persistReducer(
+        rootPersistConfig,
+        rdc.card
+    )
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

@@ -27,6 +27,10 @@ const Drop = loader(() => import('@/pages/drop'))
 
 const routes = [
 	{
+		component: Users,
+		path: '/users',
+	},
+	{
 		component: Login,
 		path: '/login',
 	},

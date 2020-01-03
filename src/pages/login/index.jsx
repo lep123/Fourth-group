@@ -18,6 +18,7 @@ import { Form, Icon, Input, Button, message } from 'antd';
          this.props.login(values).then(res => {
              if (res.payload.data.status == 200) {
                  message.success('登录成功')
+                 this.props.history.push('/')
              }else {
                 message.error('用户名或密码错误')
              }

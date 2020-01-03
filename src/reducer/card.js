@@ -4,7 +4,7 @@ const card = {
 
 export default function cards(state = card, action) {
     switch (action.type) {
-        case 'POST_LOGIN':
+        case 'POST_CART':
             console.log(action,'-----------')
             return {...state,card:[...state.card, ...action.payload.data.pois]}
         default:

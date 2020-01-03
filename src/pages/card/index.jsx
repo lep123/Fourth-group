@@ -17,7 +17,6 @@ class extends React.PureComponent {
   }
   render () {
     const { cardData } = this.props
-    console.log(cardData,'++++++++++++')
     return (
       <div id="pages_card_box">
          
