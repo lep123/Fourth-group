@@ -8,25 +8,25 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
 import * as rdc from '@/reducer'
 //我要对那些state做数据持久化
 const rootPersistConfig = {
-    key: 'root',
-    storage: storage,
-    stateReconciler: autoMergeLevel2   // 多层
+	key: 'root',
+	storage: storage,
+	stateReconciler: autoMergeLevel2   // 多层
 }
 
 //单独为 某个 reduce 做数据持久化
 const myPersistReducer = combineReducers({
-    index: rdc.home,
-    login: persistReducer(
-        rootPersistConfig,
-        rdc.login
-    )
+	index: rdc.home,
+	login: persistReducer(
+		rootPersistConfig,
+		rdc.login
+	)
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const store = createStore(
-    myPersistReducer,
-    composeEnhancers(applyMiddleware(promise, thunk))
+	myPersistReducer,
+	composeEnhancers(applyMiddleware(promise, thunk))
 )
 
 export { store }

@@ -1,9 +1,9 @@
-import { requestPost } from '@/utils/request'
+import { requestGet } from '@/utils/request'
 import Apis from '@/services/api'
-export function login (items) {
+export function getCartData (items) {
     return{
         type: 'SET_CARDDATA',
-        payload: requestPost(Apis.getCartData, items)
+        payload: requestGet('http://api.baxiaobu.com/index.php/home/v5/getuser', items)
     }
 }
 

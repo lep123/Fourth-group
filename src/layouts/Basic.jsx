@@ -7,7 +7,7 @@ export default class extends React.PureComponent {
         return (
             <div className='app'>
                 {renderRoutes(this.props.route.routes)}
-                app
+                
             </div>
         )
     }
