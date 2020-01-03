@@ -58,7 +58,6 @@ export function requestPost(url, action = {}) {
         // store.js --- window.store = store
         axios({
             method: 'POST',
-            baseURL: '/api',
             url,
             data: action,
             //headers: {
@@ -70,10 +69,12 @@ export function requestPost(url, action = {}) {
     })
 }
 
-export function requestGet(url) {
+export function requestGet(url,params) {
     return new Promise((resolve, reject) => {
         axios({
-            url
+            method:'get',
+            url,
+            params,
         })
             .then(res => resolve(res))
             .catch(err => reject(err))

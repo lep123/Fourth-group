@@ -1,4 +1,4 @@
-import login from './login.js'
+import card from './card.js'
 export {
-    login
+    card
 }

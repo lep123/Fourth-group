@@ -18,7 +18,7 @@ const myPersistReducer = combineReducers({
     // homeIndex: rdc.homeIndex,
     login: persistReducer(
         rootPersistConfig,
-        rdc.login
+        rdc.card
     )
 })
 
