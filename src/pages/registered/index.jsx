@@ -18,12 +18,11 @@ import { Form, Icon, Input, Button, message } from 'antd';
       if (!err) {
         console.log('Received values of form: ', values);
             this.props.resd(values).then( res => {
-                console.log(res.payload.status)
-                if(res.payload.status == 200){
+                if(res.payload.data.status == 200){
                     message.success('注册成功')
                     this.props.push('/login')
                 }else {
-                    message.error('注册失败')
+                    message.error('注册失败,整户已经存在')
                 }
             })
       }
@@ -83,7 +82,7 @@ import { Form, Icon, Input, Button, message } from 'antd';
                     <Input
                     prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                     type="password"
-                    placeholder="Password"
+                    placeholder="确认密码"
                     />,
                 )}
                 
