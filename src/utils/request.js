@@ -1,6 +1,6 @@
 import axios from 'axios'
 import _ from 'loadsh'
-
+import qs from 'qs'
 let cancelToken = axios.CancelToken
 const cancel = []
 
@@ -57,15 +57,20 @@ export function requestPost(url, action = {}) {
 		// console.log(window.store.getState().login.token, )
 		// store.js --- window.store = store
 		axios({
-			method: 'POST',
+			method: 'post',
 			url,
-			data: action,
+			data: qs.stringify(action),
 			//headers: {
 			//  key: '5d2878270550ac239657ffa54edd96ff',
 			//},
 		})
-			.then(res => resolve(res))
-			.catch(err => reject(err))
+			.then(res => {
+			
+				resolve(res)
+			})
+			.catch(err => {
+				reject(err)
+			})
 	})
 }
 
@@ -77,9 +82,10 @@ export function requestGet(url) {
 		})
 			.then(res => {
 				const data = res.data
+			
 				if(data.status == 200) {
 				
-					resolve(data.users)
+					resolve(data)
 				}
 			})
 			.catch(err => reject(err))
